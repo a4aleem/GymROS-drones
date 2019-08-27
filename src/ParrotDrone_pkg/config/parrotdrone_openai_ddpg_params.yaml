@@ -1,0 +1,6 @@
+drone: #namespace
+    task_and_robot_environment_name: 'ParrotDroneGoto-v0'
+    ros_ws_abspath: "/home/basha/Hassaan/catkin_workspaces/openairos_ws"
+    nepisodes: 200
+    nsteps: 1000
+    test: 100

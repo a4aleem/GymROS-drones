@@ -1,0 +1,13 @@
+<launch> 
+    <arg name="gui" default="true"/>
+    <arg name="args" default=""/>
+    <!-- This version uses the openai_ros environments -->
+    <rosparam command="load" file="$(find my_parrotdrone_openai_example)/config/parrotdrone_openai_ddpg_params.yaml" />
+    <!-- Launch the training system -->
+    <node pkg="my_parrotdrone_openai_example" name="parrotdrone_goto" type="start_training_ddpg.py" output="screen"/>
+
+    <!-- start gui -->
+    <group if="$(arg gui)">
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" output="screen"/>
+  </group>
+</launch>
